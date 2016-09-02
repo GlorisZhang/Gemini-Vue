@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en"
+      class="js canvas no-touch rgba borderradius boxshadow opacity cssanimations cssgradients csstransforms csstransforms3d fontface video audio localstorage svg json checked">
+<head>
+	<meta charset="UTF-8">
+	<title>Switcher Demo</title>
+	<link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+	<link href="/assets/css/all.css" rel="stylesheet">
+	<link href="/assets/css/telenor.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div id="switcher">
+		<div class="form-row ">
+			<button @click="toggleIt" class="button button--action">Toggle</button>
+			<button @click="setValue(true)" class="button button--action">setOn</button>
+			<button @click="setValue(false)" class="button button--action">setOff</button>
+			<button @click="getValue" class="button button--action">getValue</button>
+			<button @click="enable" class="button button--action">enable</button>
+			<button @click="disable" class="button button--action">disable</button>
+		</div>
+
+
+		<div class="form-row">
+			<t-switcher v-ref:myswitcher :on-text='switcher.onText' :off-text='switcher.offText' :disabled='switcher.disabled' :value.sync='switcher.value'
+			            @on-change="change"></t-switcher>
+			<t-switcher v-ref:mylongswitcher :on-text='longSwitcher.onText' :off-text='longSwitcher.offText' :disabled='longSwitcher.disabled' :value.sync='longSwitcher.value'
+			            @on-change="change" wide></t-switcher>
+			<pre>
+            {{$data | json}}
+        </pre>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

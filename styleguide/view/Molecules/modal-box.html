@@ -1,0 +1,96 @@
+
+<div class="block__header leader--large trailer--large">
+    <h2 class="title--medium">modal box</h2>
+</div>
+<div  class="doc-compontent-box">
+    <div class="sg-component">
+        <div class="sg-component__header">
+            <h2 class="title--medium-small trailer--small">Default modal</h2>
+        </div>
+        <div class="sg-component__status">
+            <p class="mobile-one-half mobile-pull-right mobile-text-right">
+                    <span class="status-dot status-dot--green pull-right">Approved <a href="">(0.1.0)</a>
+                    </span>
+            </p>
+        </div>
+        <div class="sg-component__markup">
+            <div class="block">
+                <div class="sg-component__label">Default modal</div>
+                <a href="#nogo" id="modal-demo">Click on the modal</a>
+                <!--default modal-->
+                  <div id="modal-demo-overlay" class="modal-box__overlay">
+                      <div class="modal-box__content gradient-line padding-whole--none modal-box--size-small">
+                        <div class="modal-box__close-btn icon icon-reject"></div>
+                          <div class="padding-whole">
+                              modal content
+                          </div>
+                      </div>
+                  </div>
+                <!-- modal-end-->
+                <div class="sg-component__label">Action buttons modal</div>
+                <a href="#nogo" id="action-modal-demo">Click on the modal</a>
+                <!--default modal-->
+                <div id="action-modal-demo-overlay" class="modal-box__overlay">
+                    <div class="modal-box--with-action-buttons modal-box__content gradient-line padding-whole--none modal-box--size-small">
+                        <div class="modal-box__close-btn icon icon-reject"></div>
+                        <div class="modal-box__container text--center">
+                            <div class="modal-box__icon-box modal-box__icon-box--blue trailer">
+                                <span class="icon icon-reject"></span>
+                            </div>
+                            <div class="text-size--13 leader--xlarge">
+                                <p class="text-size--30 text-light trailer">Allerede kunde hos Telenor? </p>
+                                <p class="trailer--large">Log ind eller fortsæt som ny kunde. </p>
+                            </div>
+                            <ul class="modal-box__action-buttons">
+                                <li>
+                                    <form action="">
+                                        <button class="button button--default">
+                                            <span class="button-text">Continue as new customer</span>
+                                        </button>
+                                    </form>
+                                </li>
+                                <li>
+                                    <form action="">
+                                        <button class="button button--accept">
+                                            <span class="button__label icon--right icon-arrow-next">Log in and continue</span>
+                                        </button>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- modal-end-->
+            </div>
+        </div>
+        <!-- document code-->
+        <div>
+            源码区域....
+        </div>
+    </div>
+</div>
+<script>
+$('#modal-demo').click(function(e){
+    e.stopPropagation();
+    if(!$('#modal-demo-overlay').hasClass('modal-box--is-open')){
+        $('#modal-demo-overlay').addClass('modal-box--is-open')
+    }
+});
+$('#action-modal-demo').click(function(e){
+    e.stopPropagation();
+    if(!$('#action-modal-demo-overlay').hasClass('modal-box--is-open')){
+        $('#action-modal-demo-overlay').addClass('modal-box--is-open')
+    }
+});
+$('.modal-box__content').click(function(e){
+    e.stopPropagation();
+});
+$('.modal-box__close-btn').click(function(){
+    $(".modal-box__overlay").removeClass("modal-box--is-open");
+});
+$(document).click(function(){
+    if($(".modal-box__overlay").hasClass("modal-box--is-open")){
+        $(".modal-box__overlay").removeClass("modal-box--is-open");
+    }
+});
+</script>

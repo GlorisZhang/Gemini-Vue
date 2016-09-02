@@ -1,0 +1,12 @@
+{
+  "web": {
+    "root": ""
+  },
+  "sec": {
+    "SEC_AUTH_TOKEN_KEY": "AppEngine_TokenId",
+    "SEC_AUTH_TENANT_KEY": "AE_TENANT",
+    "SEC_AUTH_ROLETYPE_KEY": "AE_ROLETYPE",
+    "SEC_AUTH_ZONE_KEY": "AE_ZONE"
+  }
+}
+

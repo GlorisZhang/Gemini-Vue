@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en"
+      class="js canvas no-touch rgba borderradius boxshadow opacity cssanimations cssgradients csstransforms csstransforms3d fontface video audio localstorage svg json">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Group Demo</title>
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link href="/assets/css/all.css" rel="stylesheet">
+
+  <style>
+    div.title {
+      margin-top: 50px;
+    }
+  </style>
+
+</head>
+<body>
+<div class="container">
+  <!--Default tabpanel start-->
+  <div class="sg-component__label">Default tabpanel - select on small screens</div>
+
+  <t-tabs :tabs="tabs" :content="content">
+    <section id="panel_one" class="tabpanel__panel">
+      <div class="sg-component__label">Tab content 1</div>
+    </section>
+    <section id="panel_two" class="tabpanel__panel">
+      <div class="sg-component__label">Tab content 2</div>
+    </section>
+    <section id="panel_three" class="tabpanel__panel is-active">
+      <div class="sg-component__label">Tab content 3</div>
+    </section>
+  </t-tabs>
+  <!--Default tabpanel end-->
+
+  <!--Small tabpanel start-->
+  <div class="sg-component__label title">Small tabpanel - stretch on small screens</div>
+
+  <t-tabs :tabs="smallTabs" :content="smallContent" :small="true">
+    <section id="s_panel_one" class="tabpanel__panel">
+      <div class="sg-component__label">Small Tab content 1</div>
+    </section>
+    <section id="s_panel_two" class="tabpanel__panel">
+      <div class="sg-component__label">Small Tab content 2</div>
+    </section>
+    <section id="s_panel_three" class="tabpanel__panel is-active">
+      <div class="sg-component__label">Small Tab content 3</div>
+    </section>
+  </t-tabs>
+  <!--Small tabpanel end-->
+
+  <!--Flat Tab (Many items) start-->
+  <div class="sg-component__label title">Many items - Select in mobile breakpoint</div>
+
+  <t-flat-tabs :tabs="flatTabs" :content="flatContent" :many-items="true">
+    <section id="flat_panel_one" class="tabpanel__panel">
+      <div class="sg-component__label">Flat Tab 1</div>
+    </section>
+    <section id="flat_panel_two" class="tabpanel__panel">
+      <div class="sg-component__label">Flat Tab 2</div>
+    </section>
+    <section id="flat_panel_three" class="tabpanel__panel">
+      <div class="sg-component__label">Flat Tab 3</div>
+    </section>
+    <section id="flat_panel_four" class="tabpanel__panel">
+      <div class="sg-component__label">Flat Tab 4</div>
+    </section>
+    <section id="flat_panel_five" class="tabpanel__panel">
+      <div class="sg-component__label">Flat Tab 5</div>
+    </section>
+  </t-flat-tabs>
+  <!--Flat Tab (Many items) end-->
+
+  <!--Flat Tab (few items) start-->
+  <div class="sg-component__label title">Few items</div>
+
+  <t-flat-tabs :tabs="fewFlatTabs" :content="fewFlatContent">
+    <section id="f_flat_panel_one" class="tabpanel__panel">
+      <div class="sg-component__label">Few Flat Tab 1</div>
+    </section>
+    <section id="f_flat_panel_two" class="tabpanel__panel">
+      <div class="sg-component__label">Few Flat Tab 2</div>
+    </section>
+    <section id="f_flat_panel_three" class="tabpanel__panel">
+      <div class="sg-component__label">Few Flat Tab 3</div>
+    </section>
+  </t-flat-tabs>
+  <!--Flat Tab (few items) end-->
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" class="js canvas no-touch rgba borderradius boxshadow opacity cssanimations cssgradients csstransforms csstransforms3d fontface video audio localstorage svg json">
+<head>
+  <meta charset="UTF-8">
+  <title>DropDown Demo</title>
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link href="/assets/css/all.css" rel="stylesheet">
+  <style>
+    #select_drop_down_wrapper button{
+      margin-top: 15px;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="select_drop_down_wrapper" class="container">
+    <div class="block__header leader--large trailer--large">
+      <h2 class="title--medium">下拉框-SelectDropDown</h2>
+    </div>
+    <div class="form-row">
+      <button @click="getSelDropDownValue" class="button button--action">获取选中的值(getValue)</button>
+      <button @click="getSelDropDownText" class="button button--action">获取选中的文字(getText)</button>
+      <button @click="setSelDropDownValue" class="button button--action">设置下拉框的值(setValue)</button>
+      <button @click="clearDropDown" class="button button--action">清除下拉框的值(clear)</button>
+      <button @click="disableDropDown" class="button button--action">禁用(disable)</button>
+      <button @click="enableDropDown" class="button button--action">启用(enable)</button>
+    </div>
+    <div style="max-width: 360px;margin: 50px auto 0;">
+      <t-drop-down :responsedata="recommends" label="text" value="id" emptylabel="Taurus-Items" :disabled="disabled" @on-value-change="onValueChange" @on-show-panel="onShowPanel" @on-hide-panel="onHidePanel" v-ref:my-select-dropdown></t-drop-down>
+    </div>
+  </div>
+</body>
+</html>

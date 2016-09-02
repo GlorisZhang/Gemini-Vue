@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex layout</title>
+    <link href="../assets/framework/css/all.css" rel="stylesheet" type="text/css">
+    <link href="../assets/doc/css/doc.css" rel="stylesheet" type="text/css">
+    <link href="../assets/framework/css/main.css" rel="stylesheet" type="text/css">
+    <link href="../assets/doc/css/style-guide.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="doc-side-list">
+    <ul>
+        <li class="current"><a href="#formFields">flex-layout</a></li>
+    </ul>
+</div>
+<div class="container">
+<div class="doc-compontent-box">
+    <!-- checkbox-component-start-->
+    <div class="sg-component">
+        <div class="sg-component__header">
+            <h2 class="title--medium-small trailer--small">flex-layouts</h2>
+        </div>
+        <div class="sg-component__status">
+            <p class="mobile-one-half mobile-pull-right mobile-text-right">
+                    <span class="status-dot status-dot--green pull-right">Approved <a href="/v/0.7.0/#component-Checkboxes">(0.1.0)</a>
+                    </span>
+            </p>
+        </div>
+        <div class="sg-component__markup">
+            <div class="block">
+                <div class="sg-component__label">Checkboxes list small</div>
+                <!-- component-->
+                 <div class="demo-bg trailer">
+                     <div class="grid-row grid-row--gutter-none">
+                         <div class="col-md-12">col-sm-12</div>
+                         <div class="col-md-6">col-sm-6</div>
+                         <div class="col-md-6">col-sm-6</div>
+                         <div class="col-md-3">col-md-3</div>
+                         <div class="col-md-auto">col-md-auto</div>
+                         <div class="col-md-3">col-md-3</div>
+                         <div class="col-md-3">col-md-3</div>
+                         <div class="col-md-3 col-md-offset-4">col-md-3 col-md-offset-4</div>
+                     </div>
+                 </div>
+                <div class="sg-component__label">grid-row-md--middle 垂直居中 grid-row-sm--center 水平居中</div>
+                <div class="demo-bg trailer" >
+                    <div  class="grid-row grid-row--gutter-none grid-row-sm--center grid-row-md--middle" style="
+    min-height: 200px;">
+                        <div class="col-md-8">col-md-8,center,middle</div>
+                    </div>
+                </div>
+                <div class="sg-component__label">col-*-offset向左偏移</div>
+                <div class="demo-bg trailer" >
+                    <div  class="grid-row grid-row--gutter-none">
+                        <div class="col-md-6 col-md-offset-1">col-md-6 col-md-offset-1</div>
+                        <div class="col-md-6 col-md-offset-2">col-md-6 col-md-offset-2</div>
+                        <div class="col-md-6 col-md-offset-3">col-md-6 col-md-offset-3</div>
+                        <div class="col-md-6 col-md-offset-4">col-md-6 col-md-offset-4</div>
+                    </div>
+                </div>
+                <div class="sg-component__label">grid-row-md--left左对齐 grid-row-md--right右对齐</div>
+                <div class="demo-bg trailer" >
+                    <div  class="grid-row grid-row--gutter-none grid-row-md--left">
+                        <div class="col-md-3">col-md-3,grid-row-md--top</div>
+                        <div class="col-md-3">col-md-3,grid-row-md--top</div>
+                    </div>
+                </div>
+                <div class="demo-bg trailer" >
+                    <div  class="grid-row grid-row--gutter-none grid-row-md--right">
+                        <div class="col-md-3">col-md-3,grid-row-md--bottom</div>
+                        <div class="col-md-3">col-md-3,grid-row-md--bottom</div>
+                    </div>
+                </div>
+                <div class="sg-component__label">顶对齐 底对齐</div>
+                <div class="demo-bg trailer" >
+                    <div  class="grid-row grid-row--gutter-none grid-row-md--top" style="height:80px">
+                        <div class="col-md-3">col-md-3顶对齐</div>
+                        <div class="col-md-3">col-md-3顶对齐</div>
+                    </div>
+                </div>
+                <div class="demo-bg trailer" >
+                    <div  class="grid-row grid-row--gutter-none grid-row-md--bottom" style="height:80px">
+                        <div class="col-md-3">col-md-3底对齐</div>
+                        <div class="col-md-3">col-md-3底对齐</div>
+                    </div>
+                </div>
+                <div class="demo-bg trailer">
+                    <div  class="grid-row grid-row--gutter-none grid-row-md--top" style="height:140px">
+                        <div class="col-md-3 grid-row-md--top">col-md-3顶部对齐</div>
+                        <div class="col-md-3 grid-row-md--bottom">col-md-3底部对齐</div>
+                        <div class="col-md-3 grid-row-md--bottom">col-md-3底部对齐</div>
+                    </div>
+                </div>
+                <div class="sg-component__label">等宽布局</div>
+                <div class="demo-bg trailer">
+                    <div  class="grid-row grid-row--gutter-none grid-row-md--between">
+                        <div class="col-md-2">grid-row-md--between</div>
+                        <div class="col-md-2">grid-row-md--between</div>
+                        <div class="col-md-2">grid-row-md--between</div>
+                        <div class="col-md-2">grid-row-md--between</div>
+                    </div>
+                </div>
+                <div class="sg-component__label">分散间距</div>
+                <div class="demo-bg trailer">
+                    <div  class="grid-row grid-row--gutter-none grid-row-md--around">
+                        <div class="col-md-2">grid-row-md--between</div>
+                        <div class="col-md-2">grid-row-md--between</div>
+                        <div class="col-md-2">grid-row-md--between</div>
+                        <div class="col-md-2">grid-row-md--between</div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <!-- document code-->
+        <div>
+            源码区域.......
+        </div>
+    </div>
+    <!-- checkbox-component-end-->
+    <div class="doc-compontent-box">
+        <div class="sg-component__header">
+            <h2 class="title--medium-small trailer--small">实例</h2>
+        </div>
+        <div class="sg-component__status">
+            <p class="mobile-one-half mobile-pull-right mobile-text-right">
+                    <span class="status-dot status-dot--green pull-right">Approved <a href="/v/0.7.0/#component-Checkboxes">(0.1.0)</a>
+                    </span>
+            </p>
+        </div>
+        <div class="sg-component__markup">
+            <div class="block">
+                <div class="sg-component__label">多栏同高</div>
+                <!-- component-->
+                <div class="demo-bg trailer">
+                    <div class="grid-row grid-row--gutter-none">
+                        <div class="col-md-3" style="height:260px;">sidebar</div>
+                        <div class="col-md-9">main</div>
+                    </div>
+                </div>
+                <div class="sg-component__label">响应式布局</div>
+                <!-- component-->
+                <div class="demo-bg trailer">
+                    <div class="grid-row grid-row--gutter-none">
+                        <div class="col-md-12">header</div>
+                        <div class="col-md-3" style="height:260px;">sidebar</div>
+                        <div class="col-md-9">main</div>
+                        <div class="col-md-12">footer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

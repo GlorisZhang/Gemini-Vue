@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" class="js canvas no-touch rgba borderradius boxshadow opacity cssanimations cssgradients csstransforms csstransforms3d fontface video audio localstorage svg json">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo</title>
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link href="/assets/css/all.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="block__header leader--large trailer--large">
+      <h2 class="title--medium">Aries兼容服务调用演示</h2>
+    </div>
+    <div class="form-row">
+      <button class="button button--action" v-on:click="writeCookie">write cookie</button>
+      <button class="button button--action" v-on:click="readCookie">read cookie</button>
+      <button class="button button--action" v-on:click="removeCookie">remove cookie</button>
+      <button class="button button--action" v-on:click="callService">call service</button>
+    </div>
+    <div class="form-row">
+      <h2 class="title--small">Cookie信息：</h2>
+    </div>
+    <div>
+      <div><strong>SEC_AUTH_TOKEN_KEY: </strong>{{ sec_auth_token_key }}</div>
+      <div><strong>SEC_AUTH_TENANT_KEY: </strong>{{ sec_auth_tenant_key }}</div>
+      <div><strong>SEC_AUTH_ROLETYPE_KEY: </strong>{{ sec_auth_roletype_key }}</div>
+      <div><strong>SEC_AUTH_ZONE_KEY: </strong>{{ sec_auth_zone_key }}</div>
+    </div>
+  </div>
+</body>
+</html>

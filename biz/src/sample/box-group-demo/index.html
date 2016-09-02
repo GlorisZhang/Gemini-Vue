@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" class="js canvas no-touch rgba borderradius boxshadow opacity cssanimations cssgradients csstransforms csstransforms3d fontface video audio localstorage svg json">
+<head>
+  <meta charset="UTF-8">
+  <title>Box Group Demo</title>
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link href="/assets/css/all.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="block__header leader--large trailer--large">
+      <h2 class="title--medium">复选框</h2>
+    </div>
+    <div class="form-row">
+      <button v-on:click="checkAll" class="button button--action">勾选所有</button>
+      <button v-on:click="uncheckAll" class="button button--action">取消勾选所有</button>
+      <button v-on:click="checkSecondItem" class="button button--action">勾选选项2</button>
+      <button v-on:click="uncheckSecondItem" class="button button--action">取消勾选选项2</button>
+      <button v-on:click="toggleSecondItem" class="button button--action">反选选项2</button>
+      <button v-on:click="disableAll" class="button button--action">禁用所有复选框</button>
+      <button v-on:click="enableAll" class="button button--action">启用所有复选框</button>
+    </div>
+    <div class="form-row">
+      <button v-on:click="disableSecondItem" class="button button--action">禁用选项2</button>
+      <button v-on:click="enableSecondItem" class="button button--action">启用选项2</button>
+      <button v-on:click="getValue" class="button button--action">获取所有项的值</button>
+      <button v-on:click="getSecondItemValue" class="button button--action">获取选项2的值</button>
+      <button v-on:click="getIsChecked" class="button button--action">获取所有勾选状态</button>
+      <button v-on:click="getSecondIsChecked" class="button button--action">获取选项2勾选状态</button>
+    </div>
+    <t-box-group labels="选项1,选项2,选项3,选项4"
+      checked="0,1,0,0"
+      values="This,is,a,test"
+      mtop="1"
+      size="small"
+      v-ref:my-tag1
+      v-on:changed="changed"
+      v-on:checked="checked"
+      v-on:unchecked="unchecked"></t-box-group>
+    <t-box-group labels="item1,item2,item3,item4" checked="0,1,0,0" mtop="1"></t-box-group>
+    <t-box-group labels="item1,item2,item3,item4" checked="0,1,0,0" disabled="0,1,0,1" mtop="1" size="large"></t-box-group>
+    <t-box-group labels="item1,item2,item3,item4" checked="false,false,false,true" inline="true" mtop="true" size="small"></t-box-group>
+    <t-box-group labels="item1,item2,item3,item4" inline="1" mtop="1"></t-box-group>
+    <t-box-group labels="item1,item2,item3,item4" checked="0,0,0,1" inline="1" mtop="1" size="large"></t-box-group>
+    <div class="block__header leader--large trailer--large">
+      <h2 class="title--medium">单选框</h2>
+    </div>
+    <t-box-group type="radiobox" labels="item1,item2,item3,item4" checked="0,1,0,0" mtop="1" size="small"
+      v-on:changed="changed"
+      v-on:checked="checked"
+      v-on:unchecked="unchecked"></t-box-group>
+    <t-box-group type="radiobox" labels="item1,item2,item3,item4" checked="0,1,0,0" mtop="1"></t-box-group>
+    <t-box-group type="radiobox" labels="item1,item2,item3,item4" checked="0,1,0,0" disabled="0,1,0,1" mtop="1" size="large"></t-box-group>
+    <t-box-group type="radiobox" labels="item1,item2,item3,item4" checked="false,false,false,true" inline="true" mtop="true" size="small"></t-box-group>
+    <t-box-group type="radiobox" labels="item1,item2,item3,item4" checked="0,0,0,1" inline="1" mtop="1"></t-box-group>
+    <t-box-group type="radiobox" labels="item1,item2,item3,item4" checked="0,0,0,1" inline="1" mtop="1" size="large"></t-box-group>
+    <div class="block__header leader--large trailer--large">
+      <h2 class="title--medium">复选按钮框</h2>
+    </div>
+    <div class="form-row">
+      <button v-on:click="getAllCount" class="button button--action">获得所有总数</button>
+      <button v-on:click="setAllCount" class="button button--action">设置所有总数</button>
+      <button v-on:click="getSecondCount" class="button button--action">获得选项2总数</button>
+      <button v-on:click="setSecondCount" class="button button--action">设置选项2总数</button>
+      <button v-on:click="setSomeCount" class="button button--action">设置选项2和选项3总数</button>
+    </div>
+    <t-box-group type="checkbox-filter"
+      labels="选项1,选项2,选项3,选项4"
+      counts="31,10,5,1"
+      checked="0,1,0,0"
+      mtop="1"
+      total="true"
+      total_checked="true"
+      total_label="All"
+      size="small"
+      v-ref:my-tag2
+      v-on:changed="changed"
+      v-on:checked="checked"
+      v-on:unchecked="unchecked"></t-box-group>
+    <t-box-group type="checkbox-filter" labels="item1,item2,item3,item4" counts="71,90,55,1" checked="0,1,0,0" mtop="1"></t-box-group>
+    <t-box-group type="checkbox-filter" labels="item1,item2,item3,item4" checked="0,1,0,0" disabled="0,1,0,1" mtop="1" size="large"></t-box-group>
+    <t-box-group type="checkbox-filter" labels="item1,item2,item3,item4" checked="false,false,false,true" inline="true" mtop="true" size="small"></t-box-group>
+    <t-box-group type="checkbox-filter" labels="item1,item2,item3,item4" checked="0,0,0,1" inline="1" mtop="1"></t-box-group>
+    <t-box-group type="checkbox-filter" labels="item1,item2,item3,item4" checked="0,0,0,1" inline="1" mtop="1" size="large"></t-box-group>
+  </div>
+</body>
+</html>

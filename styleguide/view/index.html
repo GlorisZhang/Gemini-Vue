@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class=" js canvas no-touch rgba borderradius boxshadow opacity cssanimations cssgradients csstransforms csstransforms3d fontface video audio localstorage svg json">
+<head>
+    <meta charset="UTF-8">
+    <link href="../assets/framework/css/all.css" rel="stylesheet" type="text/css">
+    <link href="../assets/doc/css/doc.css" rel="stylesheet" type="text/css">
+    <script src="../assets/doc/js/jquery.js" type="text/javascript"></script>
+    <script></script>
+    <title>Doc</title>
+</head>
+    <div class="main-nav">
+        <div  class="container" style="position: relative">
+            <a class="link-logo" href=""></a>
+            <ul>
+                <li class="current">Elements</li>
+                <li>Patterns</li>
+                <li>Documentation</li>
+            </ul>
+        </div>
+        <div class="main-nav-2-content">
+            <div class="main-nav-2" style="display: block">
+                <ul class="container">
+                    <li class="current">Atoms</li>
+                    <li>Molecules</li>
+                    <li>Organisms</li>
+                    <li>Pages</li>
+                </ul>
+                <div class="main-nav-3-content">
+                    <div class="main-nav-3"  style="display: block">
+                        <h2><div class="container">Atomar elements</div></h2>
+                        <div class="main-nav-3-list">
+                            <ul class="container">
+                                <li class="current"><a target="Atoms/colorFonts.html">Colours and fonts</a></li>
+                                <li><a target="Atoms/formElements.html">Form elements</a></li>
+                                <li><a target="Atoms/icons.html">Icons</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main-nav-3">
+                        <h2><div class="container">Molecular elements</div></h2>
+                        <div class="main-nav-3-list">
+                            <ul class="container">
+                                <li><a target="Molecules/contentElements.html">Content elements</a></li>
+                                <li><a target="Molecules/breadcrumb.html">Breadcrumb</a></li>
+                                <li><a target="Molecules/Products.html">Products</a></li>
+                                <li><a target="Molecules/formExamples.html">Form examples</a></li>
+                                <li><a target="Molecules/tableComponents.html">Table components</a></li>
+                                <li><a target="Molecules/Timeline.html">Timeline</a></li>
+                                <li><a target="Molecules/tabsFiftersPagers.html">Tabs, filters and pagers</a></li>
+                                <li><a target="Molecules/modal-box.html">Modal box</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main-nav-3">
+                        <h2><div class="container">Organismic elements</div></h2>
+                        <div class="main-nav-3-list">
+                            <ul class="container">
+                                <li><a target="Organismic/charts.html">Charts</a></li>
+                                <li><a target="Organismic/selfcare.html">Selfcare</a></li>
+                                <li><a target="Organismic/shop.html">Shop</a></li>
+                                <li><a target="Organismic/globalModules.html">Global modules</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="main-nav-3">
+                        <h2><div class="container">Full page prototypes</div></h2>
+                        <div class="main-nav-3-list">
+                            <ul class="container">
+                                <li><a href="#">Styleguide Prototypes</a></li>
+                                <li><a href="#">Form examples</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-nav-2">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+            </div>
+            <div class="main-nav-2">
+                <ul>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+       <div id="iframe">
+
+       </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+        $.get("Atoms/colorFonts.html",function(data){ //初始將a.html include div#iframe
+            $("#iframe").html(data);
+            $('.doc-side-list ul').on('click', 'li a', hrefAnimate);
+        });
+        $('.main-nav-3-list li').click(function() {
+            // 找出 li 中的超連結 href(#id)
+            var $this = $(this),
+                    _clickTab = $this.find('a').attr('target'); // 找到連結a中的targer標籤值
+            $this.addClass('current').siblings().removeClass('current');
+            $.get(_clickTab,function(data){
+                $("#iframe").html(data);
+                $('.doc-side-list ul').on('click', 'li a', hrefAnimate);
+            });
+        })
+
+        $('.main-nav > ul > li').click(function(){
+            $(".main-nav > ul > li").eq($(this).index()).addClass("current").siblings().removeClass('current');
+            $(".main-nav-2").hide().eq($(this).index()).show();
+        })
+        $('.main-nav-2 > ul > li').click(function(){
+            $(".main-nav-2 > ul > li").eq($(this).index()).addClass("current").siblings().removeClass('current');
+            $(".main-nav-3").hide().eq($(this).index()).show();
+        })
+        $('.main-nav-3 > ul > li').click(function(){
+            $(".main-nav-3 > ul > li").eq($(this).index()).addClass("current").siblings().removeClass('current');
+            $(".main-nav-4").hide().eq($(this).index()).show();
+        })
+
+        function hrefAnimate(){
+            $(this).parent("li").addClass('current').siblings("li").removeClass('current');
+            var anchor = $(this).attr('href');
+            var mao = $(anchor); //获得锚点
+            if (mao.length > 0) {//判断对象是否存在
+                var pos = mao.offset().top;
+                var poshigh = mao.height();
+                $("html,body").animate({scrollTop:pos}, 500);
+
+            }
+        }
+
+
+        $(window).scroll(function(){
+            var scrollTop = $(document).scrollTop();
+            var mainavHeight = $(".main-nav").height();
+            var menu = $(".doc-side-list");                      //定义变量，抓取#menu
+            var items = $(".doc-compontent-box");    //定义变量，查找.item
+            var curId = "";                             //定义变量，当前所在的楼层item #id
+            items.each(function(){
+                var m = $(this);                        //定义变量，获取当前类
+                var itemsTop = m.offset().top;        //定义变量，获取当前类的top偏移量
+                if(scrollTop > itemsTop-100){
+                    curId = "#" + m.attr("id");
+                }else{
+                    return false;
+                }
+            });
+            //给相应的楼层设置cur,取消其他楼层的cur
+            var curLink = menu.find(".current");
+            if( curId && curLink.attr("href") != curId ){
+                curLink.removeClass("current");
+                menu.find( "[href=" + curId + "]").parent("li").addClass("current");
+            }
+            if(scrollTop >= mainavHeight){
+                $(".doc-side-list").addClass("doc-side-list-fixed");
+            }else{
+                $(".doc-side-list").removeClass("doc-side-list-fixed");
+            }
+        });
+    });
+</script>
+</html>

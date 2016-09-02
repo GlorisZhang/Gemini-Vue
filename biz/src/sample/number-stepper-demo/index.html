@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" class="js canvas no-touch rgba borderradius boxshadow opacity cssanimations cssgradients csstransforms csstransforms3d fontface video audio localstorage svg json checked">
+<head>
+  <meta charset="UTF-8">
+  <title>Number Stepper</title>
+  <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+  <link href="/assets/css/all.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <div class="block__header leader--large trailer--large">
+    <h2 class="title--medium">label-normal Number stepper</h2>
+  </div>
+  <div class="form-row">
+    <t-number-stepper min="0" max="10" step="2" label="Number Steppper" v-ref:ns-normal></t-number-stepper>
+  </div>
+  <div class="form-row">
+    <button v-on:click="getNSValue" class="button button--action">取值</button>
+    <button v-on:click="disable" class="button button--action">禁用</button>
+    <button v-on:click="enable" class="button button--action">解禁</button>
+  </div>
+  <div class="form-row">
+    <button v-on:click="setNSValue(-3)" class="button button--action">设置值为(-3)</button>
+    <button v-on:click="setNSValue(3)" class="button button--action">设置值为(3)</button>
+    <button v-on:click="setNSValue(5.5)" class="button button--action">设置值为(5.5)</button>
+    <button v-on:click="setNSValue(0)" class="button button--action">设置值为(0)</button>
+    <button v-on:click="setNSValue(101)" class="button button--action">设置值为(101)</button>
+  </div>
+  <div class="block__header leader--large trailer--large">
+    <h2 class="title--medium">noLabel-small Number stepper</h2>
+  </div>
+  <div class="form-row">
+    <t-number-stepper min="0" max="100" step="1" v-ref:ns-small size="small"></t-number-stepper>
+  </div>
+</div>
+</body>
+</html>

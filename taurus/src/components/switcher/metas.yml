@@ -1,0 +1,39 @@
+props:
+  onText:
+    en: active text
+    zh-CN: 打开状态的文字
+  offText:
+    en: negative text
+    zh-CN: 关闭状态的文字
+  disabled:
+    en: if disabled
+    zh-CN: 是否不可点击
+  value:
+    en: component's state，if true，component is active else component is negative
+    zh-CN: 组件的状态 ，为true时，组件处于激活状态，false时为非激活状态
+  wide:
+    en: wide mode
+    zh-CN: 组件是否为加宽模式
+events:
+  on-change:
+    en: triggers when value change, params is (value)
+    zh-CN: 值变化时触发，参数为 (value)
+methods:
+   toggle:
+     en: toggle component't value between true and false
+     zh-CN: 切换组件的值
+   setValue:
+     en: set component's value with params
+     zh-CN: 通过参数设置组件的值
+   getValue:
+     en: get component's value
+     zh-CN: 获取组件的值
+   enable:
+     en: enable component from disabled state
+     zh-CN: 将组件从禁用状态更改为启用状态
+   disable:
+     en: disable component from enable state
+     zh-CN: 禁用组件
+
+
+
